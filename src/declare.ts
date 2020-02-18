@@ -34,3 +34,29 @@ export type DynamicAuthorizationStatus<T extends AuthorizationPlatform> =
     T extends AuthorizationPlatform.Debug ? {
     } :
     {};
+
+export type WritableAuthorizationStatus<T extends AuthorizationPlatform> = {
+
+    platform: T;
+
+    username: string;
+    displayName: string;
+    identifier: string;
+    email: string;
+    phone: string;
+
+    infos: Record<string, any>;
+    beacons: Record<string, any>;
+} & WritableDynamicAuthorizationStatus<T>;
+
+export type WritableDynamicAuthorizationStatus<T extends AuthorizationPlatform> =
+    T extends AuthorizationPlatform.Brontosaurus ? {
+        raw: string;
+    } :
+    T extends AuthorizationPlatform.Google ? {
+        token: string;
+    } :
+    T extends AuthorizationPlatform.Debug ? {
+    } :
+    {};
+
