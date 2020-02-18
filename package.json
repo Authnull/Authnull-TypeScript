@@ -1,0 +1,42 @@
+{
+  "name": "authnull",
+  "version": "1.2.0",
+  "description": ":sparkles: Authnull Server for TypeScript",
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Authnull/Authnull-TypeScript.git"
+  },
+  "author": "WMXPY",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Authnull/Authnull-TypeScript/issues"
+  },
+  "homepage": "https://github.com/Authnull/Authnull-TypeScript#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@sudoo/io": "^1.6.2",
+    "@sudoo/mock": "^1.2.0",
+    "@sudoo/triforce": "^2.1.0"
+  },
+  "nyc": {
+    "extension": [
+      ".ts"
+    ],
+    "include": [
+      "src/**/*.ts"
+    ],
+    "instrument": true,
+    "reporter": [
+      "json",
+      "text-summary"
+    ],
+    "report-dir": "coverage",
+    "require": [
+      "./test/tshook.js"
+    ],
+    "sourceMap": true
+  }
+}
