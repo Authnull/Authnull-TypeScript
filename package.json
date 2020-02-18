@@ -15,7 +15,9 @@
     "url": "https://github.com/Authnull/Authnull-TypeScript/issues"
   },
   "homepage": "https://github.com/Authnull/Authnull-TypeScript#readme",
-  "dependencies": {},
+  "dependencies": {
+    "@sudoo/random": "^2.1.0"
+  },
   "devDependencies": {
     "@sudoo/io": "^1.6.2",
     "@sudoo/mock": "^1.2.0",

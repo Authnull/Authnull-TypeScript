@@ -4,9 +4,16 @@
  * @description Declare
  */
 
-export type AuthorizationStatus = {
+export enum AuthorizationPlatform {
+    Brontosaurus = "Brontosaurus",
+    Debug = "Debug",
+    Google = "Google",
+}
 
-    readonly platform: string;
+export type AuthorizationStatus<T extends AuthorizationPlatform> = {
+
+    readonly platform: T;
+
     readonly username: string;
     readonly displayName: string;
     readonly identifier: string;
@@ -15,4 +22,15 @@ export type AuthorizationStatus = {
 
     readonly infos: Record<string, any>;
     readonly beacons: Record<string, any>;
-};
+} & DynamicAuthorizationStatus<T>;
+
+export type DynamicAuthorizationStatus<T extends AuthorizationPlatform> =
+    T extends AuthorizationPlatform.Brontosaurus ? {
+        readonly raw: string;
+    } :
+    T extends AuthorizationPlatform.Google ? {
+        readonly token: string;
+    } :
+    T extends AuthorizationPlatform.Debug ? {
+    } :
+    {};
