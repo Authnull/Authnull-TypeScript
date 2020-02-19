@@ -1,6 +1,6 @@
 {
   "name": "authnull",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": ":sparkles: Authnull Server for TypeScript",
   "directories": {
     "doc": "docs"
