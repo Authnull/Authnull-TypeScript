@@ -5,5 +5,6 @@
  */
 
 export * from "./declare";
+export * from "./device";
 export * from "./util";
 
